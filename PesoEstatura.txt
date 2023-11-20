@@ -1,0 +1,1 @@
+{'text': '60.1', 'image': '', 'values': ['1.63'], 'open': 0, 'tags': ''}, {'text': '60.1', 'image': '', 'values': ['1.63'], 'open': 0, 'tags': ''}
