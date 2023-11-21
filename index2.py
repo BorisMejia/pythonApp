@@ -47,10 +47,14 @@ class Aplicacion:
         self.mensaje['text'] = ''
         try:
           #Obtener los valores de peso y estatura del elemento seleccionado
-          item_seleccionado = self.tree.item(self.tree.selection())
+          seleccion = self.tree.selection()
+          if seleccion:
           #Utilizar índices específicos que correspondan a peso y estatura en el Treeview
-          peso = item_seleccionado
-          estatura =  item_seleccionado
+            peso = self.tree.item(seleccion, 'values')[0]
+            estatura = self.tree.item(seleccion, 'values')[1]
+          else:
+            raise IndexError("No hay elementos seleccionados")  
+
         except (IndexError, TypeError) as e:
            self.mensaje['text'] = 'Por favor selecione peso y estatura'
            return
